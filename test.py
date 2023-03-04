@@ -4,6 +4,7 @@ from __future__ import division, print_function
 
 import logging
 import sys
+import os
 from collections import Counter
 
 from scapy.layers.inet import IP, TCP
@@ -42,7 +43,7 @@ def human_number(num, k=1000):
 if __name__ == "__main__":
     import sys
 
-    with open(r'C:\Users\jorin\PycharmProjects\Wireshark\test1_00001_20230220144445.pcapng', 'rb') as fp:
+    with open(os.path.join(sys.path[0], "test1_00001_20230220144445.pcapng"), 'rb') as fp:
         scanner = FileScanner(fp)
         rdr = FileScanner(fp)
 
